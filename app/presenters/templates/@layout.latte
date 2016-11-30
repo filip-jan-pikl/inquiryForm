@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="{$lang}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="{ifset #description}{include #description |striptags|trim}{else}{$meta['description']}{/ifset}">
+        <meta name="keywords" content="{ifset #keywords}{include #keywords |striptags|trim}{else}{$meta['keywords']}{/ifset}">
+        <meta name="author" content="{$author}">
+
+		<!-- for Google -->
+		<meta name="robots" content="{$robots}" n:ifset="$robots">
+		<meta name="description" content="{ifset #description}{include #description |striptags|trim}{else}{$meta['description']}{/ifset}">
+		<meta name="keywords" content="{ifset #keywords}{include #keywords |striptags|trim}{else}{$meta['keywords']}{/ifset}">
+
+        <title>{ifset #title}{include #title|striptags|trim} | {/ifset}{$meta['title']}</title>
+
+        <!-- Custom Fonts -->
+        <link href="{$basePath}/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="{$basePath}/favicon.ico" type="image/x-icon" />
+        <!-- Bootstrap -->
+        <link href="{$basePath}/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{$basePath}/bower_components/blueimp-gallery/css/blueimp-gallery.min.css">
+
+        {if $debugMode}
+            <!-- My CSS -->
+            <link href="{$basePath}/dest/css/main.css" media="screen" rel="stylesheet">
+        {else}
+            <link href="{$basePath}/dest/css/main.min.css" media="screen" rel="stylesheet">
+        {/if}
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="{$basePath}/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+          <script src="{$basePath}/bower_components/respond/dest/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+        </div>
+
+        {include '_blocks/flashmessages.latte'}
+
+        <div class="hidden-xs hidden-sm">
+
+            {include #content}
+
+            {include '_blocks/footer.latte'}
+
+        </div>
+
+        {* Mobilní obsah *}
+        <div class="hidden-md hidden-lg">
+            <div class="container">
+                <div class="col-sm-12 col-xs-12">
+                    <h1>Upozornění</h1>
+                    <p>Tento web není určen pro mobilní zařízení.</p>
+                    <h2>Kontakt</h2>
+                    <p>Pro více informací volejte prosím na číslo: (+420) 606 053 195</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="{$basePath}/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="{$basePath}/bower_components/nette-forms/src/assets/netteForms.js"></script>
+        <script src="{$basePath}/bower_components/nette.ajax.js/nette.ajax.js"></script>
+        <script src="{$basePath}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="{$basePath}/bower_components/blueimp-gallery/js/blueimp-gallery.min.js"></script>
+        <script src="{$basePath}/bower_components/Nette-LiveFormValidation/src/live-form-validation.js"></script>
+
+        <script>
+            LiveForm.setOptions({
+                messageErrorPrefix: 'Error: ',
+                messageParentClass: 'has-error',
+                wait: 500
+            });
+        </script>
+
+        {if $debugMode}
+            <script src="{$basePath}/src/js/czechmap.js"></script>
+            <script src="{$basePath}/src/js/main.js"></script>
+        {else}
+            <script src="{$basePath}/dest/js/main.min.js"></script>
+
+            <!-- Google Analytics --> 
+        {/if}
+    </body>
+   
+</html>

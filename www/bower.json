@@ -1,0 +1,22 @@
+{
+  "name": "filip-jan-pikl/inquiryForm",
+  "description": "bez popisu",
+  "authors": [
+    "Filip Jan Pikl (pikl.cz) <fjpikl@gmail.com>"
+  ],
+  "main": [
+  "dest/js/main.js",
+  "dest/css/main.css"
+  ],
+  "license": "no license",
+  "homepage": "webmapjob.com",
+  "private": true,
+  "dependencies": {
+    "components-font-awesome": "^4.7.0",
+    "html5shiv": "^3.7.3",
+    "less": "^2.7.1",
+    "bootstrap": "^3.3.7",
+    "nette.ajax.js": "^2.2.0",
+    "respond": "^1.4.2"
+  }
+}

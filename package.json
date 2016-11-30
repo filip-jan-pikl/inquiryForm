@@ -1,0 +1,19 @@
+{
+  "name": "inquiryForm",
+  "description": "Easy web basement with inquiry form.",
+  "version": "0.0.0",
+  "srcFolder": "www/src",
+  "destFolder": "www/dest",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bower-concat": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-less": "~1.4.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
