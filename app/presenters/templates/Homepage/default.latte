@@ -1,0 +1,58 @@
+{block content}
+ <!-- Fixed navbar -->
+    <nav class="navbar navbar-fixed-top" id="navigace">
+      <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" n:href="this">add logo{* <img src="{$basePath}/dest/img/logo.jpg" alt="YOUR COMPANY"> *}</a>
+        </div>
+        <div id="navbar">
+          <span class="webTitle pull-right">
+            slogan
+          </span>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container" role="main">
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="btn-group btn-group-justified col-md-2" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default activeBtnGrp" id="poptavka">inquiry form</button>
+            </div>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default" id="specifikace">specification</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="specBlock" style="display:none">
+        <div class="main col-md-10 col-md-offset-1">
+          <div class="header">
+            <span class="headerTitle">
+              Specification
+            </span>
+          </div>
+
+          {include '../_blocks/specification.latte'}
+
+        </div>
+      </div>
+
+      <div class="row" id="formBlock">
+        <div class="main col-md-10 col-md-offset-1">
+          <div class="header">
+            <span class="headerTitle">
+              Inquiry form
+            </span>
+          </div>
+
+            {control inquiryForm}
+
+        </div>
+      </div>
+
+    </div> <!-- /container -->

@@ -1,0 +1,11 @@
+parameters:
+	title: ''
+	description: ''
+	keywords: ''
+	adminEmail: ''
+	author: 'Filip Jan Pikl - pikl.cz'
+	primaryLang: 'cs'
+	debugMode: "true" #boolean
+
+tracy:
+	email: ''

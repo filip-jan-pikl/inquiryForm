@@ -1,0 +1,11 @@
+app/config/config.local.neon
+log/
+nbproject/
+node_modules/
+temp/
+vendor/
+www/bower_components/
+www/dest/
+
+composer.lock
+.log

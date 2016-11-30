@@ -1,0 +1,69 @@
+  $(function(){
+     var czechMapOverlap = $('#czechMap-overlap'),
+         czechMap = $('#czechMap'); 
+     
+        // map hover 
+       $(".czechMap-area").hover(function(){
+           czechMapOverlap.attr('src', $(this).attr('data-img') );
+           czechMapOverlap.hide(0).stop(false, true);
+           czechMapOverlap.fadeIn(500);
+       },function(){
+            krajAktual = document.getElementById('krajeList').value;
+
+            if (krajAktual.length > 0) {
+              $("#czechMap-overlap").attr("src", "img/mapacr/" + krajAktual + ".png");
+            } else {
+              $("#czechMap-overlap").attr("src", "img/mapacr/none.png");
+            }          
+           
+  
+       });
+
+       $(".czechMap-area").click(function(){
+          var tempScrollTop = $(window).scrollTop();
+          
+          var result = $(this).attr('data-img');
+          result = result.replace('img/mapacr/', '');
+          result = result.replace('.png', '');
+          document.getElementById('krajeList').value = result;
+
+          $(window).scrollTop(tempScrollTop);
+          return false;
+       });
+              
+      //Nastavi kraj v selectboxu dle mapy    
+      function kraj(kraj) {
+        document.getElementById('krajeList').value = kraj;
+      }
+
+       $("#krajeList").change(function(){
+          if (this.value.length > 0) {
+              czechMapOverLap = document.getElementById('czechMap-overlap');
+              czechMapOverLap.src = "img/mapacr/" + this.value + ".png";
+            } else {
+              $("#czechMap-overlap").attr("src", "img/mapacr/none.png");
+            }
+      });
+
+      function aktualniKraj() {
+        krajAktual = document.getElementById('krajeList').value;
+        if (krajAktual.length > 0) {
+          $("#czechMap-overlap").attr("src", "img/mapacr/" + kraj + ".png");
+        } else {
+          $("#czechMap-overlap").attr("src", "img/mapacr/none.png");
+        }         
+        
+      }
+  });
+$("#specifikace").click(function(){
+    $("#formBlock").hide();
+    $("#specBlock").fadeIn("slow");
+    $("#poptavka").removeClass("activeBtnGrp");
+    $("#specifikace").addClass("activeBtnGrp");
+});
+$("#poptavka").click(function(){
+    $("#specBlock").hide();
+    $("#formBlock").fadeIn("slow");
+    $("#specifikace").removeClass("activeBtnGrp");
+    $("#poptavka").addClass("activeBtnGrp");
+});
