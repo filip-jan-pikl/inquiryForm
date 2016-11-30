@@ -1,5 +1,5 @@
 Description:
-Simple onepage web with form to send inquiry via email.
+Simple onepage web using nette framework with form to send inquiry via email.
 
 Form includes:
 - region (it is possible to pick it up via map)
