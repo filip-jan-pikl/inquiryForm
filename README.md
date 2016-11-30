@@ -1,17 +1,10 @@
-Příprava aplikace:
-- instalovat NodeJS - https://nodejs.org/en/
-- pokud není nainstalován lokálně grunt, CMD: "npm install -g grunt-cli"
-- pokud není nainstalován bower, CMD: "npm install -g bower"
-- CMD: "npm install" (instaluje závislosti z package.json)
-- složka www/ CMD: "bower install" (instaluje bower.json)
+Description:
+Simple onepage web with form to send inquiry via email.
 
-Vývoj aplikace:
-- CMD: "grunt watch" (sleduje změny stylů a skriptů)
+Form includes:
+- region (it is possible to pick it up via map)
+- name, email, phone, upload files and description
 
-//todo Deployment aplikace:
-- připojí se na server, promaže temp/ a log/, a nahraje/promaže soubory 
-//todo - devel:  _deployment/deploy-devel.cmd 
-//todo - master: _deployment/deploy-master.cmd (nutné zadání hesla)
+There is also place for presentation the product(s).
 
-EditorConfig:
-- jednotné nastavení editoru  
+Requires: twitter bootstrap, jquery, etc (installation via GRUNT and BOWER).
